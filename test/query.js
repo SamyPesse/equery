@@ -12,9 +12,9 @@ describe('Query', function() {
                 .term('user', 'samy')
                 .toJSON()
                 .should.deepEqual({
-                    "query": {
-                        "term": {
-                            "user": "samy"
+                    'query': {
+                        'term': {
+                            'user': 'samy'
                         }
                     }
                 });

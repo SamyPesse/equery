@@ -30,8 +30,8 @@ q.term('user', 'Kimchy');
 // Filter a query
 Query()
     .filter(
-        Query.Filter.bool()
-        .must(Query.Filter.term('user', 'Kimchy'))
+        Query.Filter.Bool()
+        .must(Query.Filter.Term('user', 'Kimchy'))
     )
 
 
