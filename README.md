@@ -19,7 +19,7 @@ $ npm install equery
 ```js
 var Query = require('equery');
 
-var q = new Query();
+var query = new Query();
 ```
 
 ### query.toJSON
@@ -31,7 +31,7 @@ var result = q.toJSON();
 ### query.sort
 
 ```js
-Query()
+query
     .sort('followers:desc')
     .toJSON();
 ```
@@ -39,7 +39,7 @@ Query()
 ### query.term
 
 ```js
-Query()
+query
     .term('field', 'value')
     .toJSON();
 ```
@@ -49,7 +49,7 @@ Query()
 Queries are chainable:
 
 ```js
-Query()
+query
     .term('user', 'Kimchy')
     .sort('followers:desc')
     .toJSON();
