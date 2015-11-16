@@ -58,7 +58,7 @@ query
 
 ### Filters
 
-A filter can be set on the query using `query.filter(filer)`.
+A filter can be set on the query using `query.filter(filer)`. Multiple calls to `query.filter` is equivalent to `filter1 AND filter2 AND ...`
 
 ##### Filter.Term
 

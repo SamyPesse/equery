@@ -27,12 +27,43 @@ describe('Query', function() {
                 .filter(Query.Filter.Term('hello', 'world'))
                 .toJSON()
                 .should.deepEqual({
-                    'filtered': {
-                        'filter': {
-                            'term': {
-                                'hello': 'world'
+                    'query': {
+                        'filtered': {
+                            'filter': {
+                                'term': {
+                                    'hello': 'world'
+                                }
                             }
                         }
+                    }
+                });
+        });
+
+        it('should extend existing filter', function() {
+            Query()
+                .filter(Query.Filter.Term('hello', 'world'))
+                .filter(Query.Filter.Term('hello2', 'world'))
+                .toJSON()
+                .should.deepEqual({
+                    'query': {
+                        'filtered': {
+                            'filter': {
+                                'bool': {
+                                    'must': [
+                                        {
+                                            'term': {
+                                                'hello': 'world'
+                                            }
+                                        },
+                                        {
+                                            'term': {
+                                                'hello2': 'world'
+                                            }
+                                        }
+                                    ]
+                                }
+                             }
+                         }
                     }
                 });
         });
