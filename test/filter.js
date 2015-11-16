@@ -2,7 +2,7 @@ var Filter = require('../').Filter;
 
 describe('Filter', function() {
 
-    describe('Filter.term', function() {
+    describe('Filter.Term', function() {
         it('should correctly output as JSON', function() {
             Filter.Term('hello', 'world')
                 .toJSON()
@@ -36,8 +36,23 @@ describe('Filter', function() {
         });
     });
 
-    describe('Filter.bool', function() {
-
+    describe('Filter.Bool', function() {
+        it('should correctly output as JSON', function() {
+            Filter.Bool()
+                .must(Filter.Term('hello', 'world'))
+                .toJSON()
+                .should.deepEqual({
+                    'bool': {
+                        'must': [
+                            {
+                                'term': {
+                                    'hello': 'world'
+                                }
+                            }
+                        ]
+                    }
+                });
+        });
     });
 
 });

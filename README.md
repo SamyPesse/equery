@@ -23,17 +23,8 @@ var q = new Query();
 // Output the query as JSON
 var result = q.toJSON();
 
-
 // Term query
 q.term('user', 'Kimchy');
-
-// Filter a query
-Query()
-    .filter(
-        Query.Filter.Bool()
-        .must(Query.Filter.Term('user', 'Kimchy'))
-    )
-
 
 // Queries are chainable
 Query()
@@ -41,3 +32,26 @@ Query()
     .sort('followers:desc')
     .toJSON();
 ```
+
+### Filters
+
+A filter can be set on the query using `query.filter(filer)`.
+
+##### Filter.Term
+
+```js
+query.filter(
+    Query.Filter.Term('user', 'Kimchy')
+)
+```
+
+##### Filter.Bool
+
+```js
+query.filter(
+    Query.Filter.Bool()
+    .must(Query.Filter.Term('user', 'Kimchy'))
+    .mustNot(Query.Filter.Term('user', 'Kimchy'))
+)
+```
+
