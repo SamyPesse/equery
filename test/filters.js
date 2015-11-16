@@ -55,4 +55,16 @@ describe('Filter', function() {
         });
     });
 
+    describe('Filter.Exists', function() {
+        it('should correctly output as JSON', function() {
+            Filter.Exists('test')
+                .toJSON()
+                .should.deepEqual({
+                    'exists': {
+                        'field': 'test'
+                    }
+                });
+        });
+    });
+
 });
