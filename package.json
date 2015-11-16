@@ -2,7 +2,7 @@
     "name": "equery",
     "description": "Query builder for Elasticsearch",
     "main": "lib/index.js",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "dependencies": {
         "lodash": "^3.10.1"
     },
