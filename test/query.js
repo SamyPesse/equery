@@ -20,4 +20,21 @@ describe('Query', function() {
                 });
         });
     });
+
+    describe('query.filter', function() {
+        it('should accept a filter', function() {
+            Query()
+                .filter(Query.Filter.Term('hello', 'world'))
+                .toJSON()
+                .should.deepEqual({
+                    'filtered': {
+                        'filter': {
+                            'term': {
+                                'hello': 'world'
+                            }
+                        }
+                    }
+                });
+        });
+    });
 });

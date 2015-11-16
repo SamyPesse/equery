@@ -6,32 +6,55 @@
 
 Query builder for elasticsearch (Node.js / Javascript)
 
-### Installation
+## Installation
 
 ```
 $ npm install equery
 ```
 
-### Usage
+## Usage
+
+### Building a query
 
 ```js
 var Query = require('equery');
 
-// Build a query
 var q = new Query();
+```
 
-// Output the query as JSON
+### query.toJSON
+
+```js
 var result = q.toJSON();
+```
 
-// Term query
-q.term('user', 'Kimchy');
+### query.sort
 
-// Queries are chainable
+```js
+Query()
+    .sort('followers:desc')
+    .toJSON();
+```
+
+### query.term
+
+```js
+Query()
+    .term('field', 'value')
+    .toJSON();
+```
+
+### Chain
+
+Queries are chainable:
+
+```js
 Query()
     .term('user', 'Kimchy')
     .sort('followers:desc')
     .toJSON();
 ```
+
 
 ### Filters
 
