@@ -14,7 +14,7 @@ $ npm install elasticsearch-query
 
 ### Usage
 
-```
+```js
 var Query = require('elasticsearch-query');
 
 // Build a query
@@ -24,4 +24,13 @@ var q = new Query();
 var result = q.toJSON();
 
 
+// Term query
+q.term('user', 'Kimchy');
+
+
+// Queries are chainable
+Query()
+    .term('user', 'Kimchy')
+    .sort('followers:desc')
+    .toJSON();
 ```
