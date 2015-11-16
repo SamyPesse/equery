@@ -1,0 +1,26 @@
+{
+    "name": "elasticsearch-query",
+    "description": "Query builder for Elasticsearch",
+    "main": "lib/index.js",
+    "version": "0.0.0",
+    "dependencies": {
+        "lodash": "^3.10.1",
+        "q": "1.4.1"
+    },
+    "devDependencies": {
+        "mocha": "2.3.4",
+        "should": "7.1.1"
+    },
+    "homepage": "https://github.com/SamyPesse/elasticsearch-query",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SamyPesse/elasticsearch-query.git"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/SamyPesse/elasticsearch-query/issues"
+    },
+    "scripts": {
+        "test": "node_modules/.bin/mocha --reporter spec --timeout 15000"
+    }
+}
