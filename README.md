@@ -44,6 +44,13 @@ query
     .toJSON();
 ```
 
+### PAgination
+
+```js
+query.limit(100);
+query.skip(10);
+```
+
 ### Chain
 
 Queries are chainable:
@@ -52,6 +59,8 @@ Queries are chainable:
 query
     .term('user', 'Kimchy')
     .sort('followers:desc')
+    .limit(100)
+    .skip(10)
     .toJSON();
 ```
 
