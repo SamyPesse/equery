@@ -1,7 +1,7 @@
-# elasticsearch-query
+# equery
 
-[![npm version](https://badge.fury.io/js/elasticsearch-query.svg)](http://badge.fury.io/js/elasticsearch-query)
-[![Build Status](https://travis-ci.org/SamyPesse/elasticsearch-query.png?branch=master)](https://travis-ci.org/SamyPesse/elasticsearch-query)
+[![npm version](https://badge.fury.io/js/equery.svg)](http://badge.fury.io/js/equery)
+[![Build Status](https://travis-ci.org/SamyPesse/equery.png?branch=master)](https://travis-ci.org/SamyPesse/equery)
 
 
 Query builder for elasticsearch (Node.js / Javascript)
@@ -9,13 +9,13 @@ Query builder for elasticsearch (Node.js / Javascript)
 ### Installation
 
 ```
-$ npm install elasticsearch-query
+$ npm install equery
 ```
 
 ### Usage
 
 ```js
-var Query = require('elasticsearch-query');
+var Query = require('equery');
 
 // Build a query
 var q = new Query();
@@ -26,6 +26,13 @@ var result = q.toJSON();
 
 // Term query
 q.term('user', 'Kimchy');
+
+// Filter a query
+Query()
+    .filter(
+        Query.Filter.bool()
+        .must(Query.Filter.term('user', 'Kimchy'))
+    )
 
 
 // Queries are chainable

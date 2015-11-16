@@ -1,5 +1,5 @@
 {
-    "name": "elasticsearch-query",
+    "name": "equery",
     "description": "Query builder for Elasticsearch",
     "main": "lib/index.js",
     "version": "0.0.0",
@@ -10,14 +10,14 @@
         "mocha": "2.3.4",
         "should": "7.1.1"
     },
-    "homepage": "https://github.com/SamyPesse/elasticsearch-query",
+    "homepage": "https://github.com/SamyPesse/equery",
     "repository": {
         "type": "git",
-        "url": "https://github.com/SamyPesse/elasticsearch-query.git"
+        "url": "https://github.com/SamyPesse/equery.git"
     },
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/SamyPesse/elasticsearch-query/issues"
+        "url": "https://github.com/SamyPesse/equery/issues"
     },
     "scripts": {
         "test": "node_modules/.bin/mocha --reporter spec --timeout 15000"
